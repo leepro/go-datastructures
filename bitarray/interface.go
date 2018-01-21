@@ -44,6 +44,7 @@ type BitArray interface {
 	Reset()
 	// Blocks returns an iterator to be used to iterate
 	// over the bit array.
+	RawBlocks() []block
 	Blocks() Iterator
 	// Equals returns a bool indicating equality between the
 	// two bit arrays.
