@@ -227,6 +227,10 @@ func (ba *bitArray) Intersects(other BitArray) bool {
 	return ba.intersectsDenseBitArray(other.(*bitArray))
 }
 
+func (ba *bitArray) RawBlocks() []block {
+	return ba.blocks
+}
+
 // Blocks will return an iterator over this bit array.
 func (ba *bitArray) Blocks() Iterator {
 	return newBitArrayIterator(ba)
