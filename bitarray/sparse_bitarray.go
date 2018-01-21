@@ -167,6 +167,10 @@ func (sba *sparseBitArray) Reset() {
 	sba.indices = sba.indices[:0]
 }
 
+func (sba *sparseBitArray) RawBlocks() []block {
+	return nil
+}
+
 // Blocks returns an iterator to iterator of this bitarray's blocks.
 func (sba *sparseBitArray) Blocks() Iterator {
 	return newCompressedBitArrayIterator(sba)
