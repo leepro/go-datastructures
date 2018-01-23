@@ -42,9 +42,12 @@ type BitArray interface {
 	ClearBit(k uint64) error
 	// Reset sets all values to zero.
 	Reset()
+	// RawBlocks returns the internal []block
+	RawBlocks() []block
+	// SetBlock set a value in the internal []block.
+	SetBlock(i int, value uint64) error
 	// Blocks returns an iterator to be used to iterate
 	// over the bit array.
-	RawBlocks() []block
 	Blocks() Iterator
 	// Equals returns a bool indicating equality between the
 	// two bit arrays.

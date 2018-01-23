@@ -81,6 +81,15 @@ func (ba *bitArray) ToNums() []uint64 {
 	return nums
 }
 
+func (ba *bitArray) SetBlock(i int, value uint64) error {
+	if i > len(ba.blocks) {
+		return OutOfRangeError(i)
+	}
+
+	ba.blocks[i] = block(value)
+	return nil
+}
+
 // SetBit sets a bit at the given index to true.
 func (ba *bitArray) SetBit(k uint64) error {
 	if k >= ba.Capacity() {

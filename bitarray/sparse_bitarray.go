@@ -167,6 +167,10 @@ func (sba *sparseBitArray) Reset() {
 	sba.indices = sba.indices[:0]
 }
 
+func (sba *sparseBitArray) SetBlock(i int, value uint64) error {
+	return nil
+}
+
 func (sba *sparseBitArray) RawBlocks() []block {
 	return nil
 }
